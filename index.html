@@ -7,44 +7,83 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
-    <h2>Formulář pro objednávku</h2>
-
-    <form id="orderForm" method="get" class="form-example">
-        <div class="form-example">
-          <label for="name">Jméno: </label>
-          <input type="text" name="name" id="name" required />
-        </div>
-        <div class="form-example">
-          <label for="surname">Přijmení: </label>
-          <input type="text" name="surname" id="surname" required />
-        </div>
-        <div class="form-example">
-          <label for="email">E-mail: </label>
-          <input type="email" name="email" id="email" required />
-        </div>
-        <div class="form-example">
-          <label for="product">Název produktu: </label>
-          <input type="text" name="product" id="product" required />
-        </div>
-        <div class="form-example">
-          <label for="price">Cena za kus: </label>
-          <input type="number" name="price" id="price" required min="1" />
-        </div>
-        <div class="form-example">
-          <label for="quantity">Množství: </label>
-          <input type="number" name="quantity" id="quantity" required min="1" value="1" />
-        </div>
-
-        <p><strong>Celková cena: <span id="totalPrice">0</span> Kč</strong></p>
-
-        <div class="form-example">
-          <input type="submit" value="Odeslat" />
-        </div>
+  <div class="container">
+    <form id="objednavka" method="get" class="form-input">
+      <h2>Formulář pro objednávku</h2>
+      <div class="form-input">
+        <label for="name">Jméno: </label>
+        <input type="text" name="name" id="name" placeholder="Jméno" required />
+      </div>
+      <div class="form-input">
+        <label for="surname">Přijmení: </label>
+        <input type="text" name="surname" id="surname" placeholder="Přijmení" required />
+      </div>
+      <div class="form-input">
+        <label for="email">E-mail: </label>
+        <input type="email" name="email" id="email" placeholder="E-mail" required />
+      </div>
+      <div class="form-input">
+        <label for="product">Název produktu: </label>
+        <input type="text" name="product" id="product" placeholder="Název produktu" required />
+      </div>
+      <div class="form-input">
+        <label for="price">Cena za kus: </label>
+        <input type="number" name="price" placeholder="Cena za kus" id="price" required min="1" />
+      </div>
+      <div class="form-input">
+        <label for="currency">Měna: </label>
+        <select name="currency" placeholder="Měna" id="currency">
+          <option value="AUD">Australský dollar</option>
+          <option value="BRL">Brazilská real</option>
+          <option value="BGN">Bulharský lvov</option>
+          <option value="CAD">Kanadský dollar</option>
+          <option value="CNY">Čínský juan</option>
+          <option value="CZK">Česká koruna</option>
+          <option value="DKK">Dánská koruna</option>
+          <option value="EUR">Euro</option>
+          <option value="HKD">Hongkongský dollar</option>
+          <option value="HUF">Maďarský forint</option>
+          <option value="ISK">Irská króna</option>
+          <option value="XDR">IMF</option>
+          <option value="INR">Indické rupie</option>
+          <option value="IDR">Indoneská rupie</option>
+          <option value="ILS">Izraelský šekel</option>
+          <option value="JPY">Japonský yen</option>
+          <option value="MYR">Malajsijský ringgit</option>
+          <option value="MXN">Mexické peso</option>
+          <option value="NZD">Novozélandský dollar</option>
+          <option value="NOK">Norská koruna</option>
+          <option value="PHP">Filipínské peso</option>
+          <option value="PLN">Polský zlotý</option>
+          <option value="RON">Rumunské leu</option>
+          <option value="SGD">Singapurský dollar</option>
+          <option value="ZAR">Jihoafrický rand</option>
+          <option value="KRW">Jihokorejský won</option>
+          <option value="SEK">Švédská koruna</option>
+          <option value="CHF">Švýcarský frank</option>
+          <option value="THB">Thajský baht</option>
+          <option value="TRY">Turecká lira</option>
+          <option value="GBP">Britská libra</option>
+          <option value="USD">Americký dollar</option>
+        </select>
+      </div>
+      <div class="form-input">
+        <label for="quantity">Množství: </label>
+        <input type="number" name="quantity" id="quantity" required min="1" value="1" />
+      </div>
+      <p class="calculation">
+        <strong>Celková cena: 
+          <span id="totalPrice">0</span> 
+          <span id="currencySymbol">CZK</span>
+        </strong>
+      </p>
+      <div class="form-input">
+        <input class="submit" type="submit" value="Odeslat" />
+      </div>
     </form>
-
-    <div class="summary" id="summary"></div>
-
-    <script src="js/vypocet_ceny.js"></script>
-    <script src="js/orderForm.js"></script>
+  </div>
+    
+  <script src="js/vypocet_ceny.js"></script>
+  <script src="js/objednavka.js"></script>
 </body>
 </html>
