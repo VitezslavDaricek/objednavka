@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekapitulace objednávky</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <div class="summary" id="summary"></div>
+    </div>
+
+    <script>
+        // Načtení parametrů z URL
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const surname = params.get('surname');
+        const email = params.get('email');
+        const product = params.get('product');
+        const quantity = parseInt(params.get('quantity')) || 0; // Zajištění, že quantity je číslo, jinak 0
+        const totalPrice = params.get('totalPrice');
+        const totalPriceWithVAT = params.get('totalPriceWithVAT');
+        const currency = params.get('currency');    // Získání měny z URL parametrů
+        const priceInSelectedCurrency = params.get('priceInSelectedCurrency');  // Získání ceny v zvolené měně
+
+        // Zobrazení rekapitulace
+        document.getElementById('summary').innerHTML = `
+            <h3>Rekapitulace objednávky</h3>
+            <p><strong>Jméno:</strong> ${name} ${surname}</p>
+            <p><strong>E-mail:</strong> ${email}</p>
+            <p><strong>Produkt:</strong> ${product}</p>
+            <p><strong>Množství:</strong> ${quantity} kusů</p>
+            <p><strong>Cena za kus bez DPH:</strong> ${quantity > 0 ? (totalPrice / quantity).toFixed(2) : 'N/A'} CZK</p>
+            <p><strong>Celková cena bez DPH:</strong> ${totalPrice} CZK</p>
+            <p><strong>Celková cena s DPH (21%):</strong> ${totalPriceWithVAT} CZK</p>
+            <p><strong>Zvolená měna:</strong> ${currency}</p>
+            <p><strong>Celková cena v ${currency}:</strong> ${priceInSelectedCurrency} ${currency}</p>
+        `;
+    </script>
+
+    <script src="js/objednavka.js"></script>
+    <script src="js/API_kurz.js"></script>
+</body>
+</html>
