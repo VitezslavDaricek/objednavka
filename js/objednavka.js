@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Přepočet pouze pro vybrané měny
             if (['AUD', 'BRL', 'BGN', 'CAD', 'CNY', 'CZK', 'DKK', 'EUR', 'HKD', 'HUF', 'ISK', 'XDR', 'INR', 'IDR', 'ILS', 'JPY', 'MYR', 'MXN', 'NZD', 'NOK', 'PHP', 'PLN', 'RON', 'SGD', 'ZAR', 'KRW', 'SEK', 'CHF', 'THB', 'TRY', 'GBP', 'USD'].includes(selectedCurrency)) {
-                fetch('http://localhost/objednavka_mioweb/getCNBData.php')
+                fetch('http://test.cz.web1.relaxhosting.cz/getCNBData.php')
                     .then(response => response.text())
                     .then(data => {
                         // Získání přepočítávacího kurzu podle zvolené měny
