@@ -1,6 +1,6 @@
 // Zde můžeme zavolat API pro získání kurzu
 if (currency === 'AUD' || currency === 'BRL' || currency === 'BGN' || currency === 'CAD' || currency === 'CNY' || currency === 'CZK' || currency === 'DKK' || currency === 'EUR' || currency === 'HKD' || currency === 'HUF' || currency === 'ISK' || currency === 'XDR' || currency === 'INR' || currency === 'IDR' || currency === 'ILS' || currency === 'JPY' || currency === 'MYR' || currency === 'MXN' || currency === 'NZD' || currency === 'NOK' || currency === 'PHP' || currency === 'PLN' || currency === 'RON' || currency === 'SGD' || currency === 'ZAR' || currency === 'KRW' || currency === 'SEK' || currency === 'CHF' || currency === 'THB' || currency === 'TRY' || currency === 'GBP' || currency === 'USD') {
-    fetch('http://localhost/objednavka_mioweb/getCNBData.php')
+    fetch('http://test.cz.web1.relaxhosting.cz/getCNBData.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Network response was not ok (${response.status})`);
